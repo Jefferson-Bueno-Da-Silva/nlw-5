@@ -25,10 +25,13 @@ export class UserService {
 
     return user;
   }
-  async findByEmail(email : string){
-    const userExists = await this.usersRepository.findOne({
-      email
+
+  async findByEmail(email: string) {
+    console.log("service");
+    
+    const user = await this.usersRepository.findOne({ 
+      email,
     });
-    return userExists;
+    return user;
   }
 }
