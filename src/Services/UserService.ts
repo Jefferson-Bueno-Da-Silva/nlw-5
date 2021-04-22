@@ -25,4 +25,13 @@ export class UserService {
 
     return user;
   }
+
+  async findByEmail(email: string) {
+    console.log("service");
+    
+    const user = await this.usersRepository.findOne({ 
+      email,
+    });
+    return user;
+  }
 }
